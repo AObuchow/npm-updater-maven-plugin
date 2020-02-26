@@ -47,8 +47,8 @@ public class NPMUpdaterMojo extends AbstractMojo {
 				p.waitFor();
 				String latestVersion = convertInputStreamToString(p.getInputStream()).trim();
 				if (!entry.getValue().equals(latestVersion)) {
-					getLog().info(entry.getKey() + "is outdated!");
-					getLog().info("current version: " + entry.getValue() + ", latest version: " + latestVersion);
+					getLog().warn(entry.getKey() + "is outdated!");
+					getLog().warn("current version: " + entry.getValue() + ", latest version: " + latestVersion);
 				}
 
 			}
